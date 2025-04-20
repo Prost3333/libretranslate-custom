@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: libretranslate-custom
+    env: docker
+    plan: free
+    dockerfilePath: Dockerfile
+    region: frankfurt
+    autoDeploy: false
+    envVars:
+      - key: LANGUAGES
+        value: "en,nl,ru"
+    ports:
+      - port: 5000
